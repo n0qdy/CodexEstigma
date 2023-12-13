@@ -8,3 +8,4 @@ export function loadTemplate () {
             $("body").prepend(data);
         });
 }
+

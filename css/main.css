@@ -16,7 +16,13 @@
 @font-face {
     font-family: 'Jost';
     src:url('../fonts/jost-vf.woff2') format("woff2"), url('../fonts/jost-vf.woff') format("woff");
-    font-display:swap
+    font-display:swap;
+}
+
+@font-face {
+    font-family: "Lora";
+    src: url("../fonts/Lora-Regular.woff") format("woff"), url("../fonts/Lora-Regular.woff2") format("woff2");
+    font-display:swap;
 }
 
 /* css reset */
@@ -72,7 +78,6 @@ aside{
     display: grid;
     grid-template:
             "header" 50px
-            "title" 200px
             "content" auto;
     background-color: var(--main-bgcolor);
     text-align: center;
@@ -86,48 +91,66 @@ aside{
         height: 50px;
         grid-area: header;
         background-color: #0a0a0a;
-        overflow: auto;
+        /*overflow: auto;*/
         display: block;
 
         .container{
             width: 100%;
-            /*padding: 0 20px;*/
-            /*height: 50px;*/
-            overflow: auto;
+            /*overflow: auto;*/
 
         }
-    }
 
-    #main-title{
-        background-color: #111111;
-        width: 100%;
-        height: 200px;
-        /*padding-top: 100px;*/
-        grid-area: title;
-        h1{
+        .logo{
+            font-size: 200%;
+            font-family: 'Lora', serif;
             color: #fff;
-            text-shadow: 0 0 10px #fff8;
         }
     }
 
     #main-content{
-        background: linear-gradient(to bottom, #111 0, var(--main-bgcolor) 50px 50px);
-        color: #aaa;
-        font-size: 20px;
-        padding: 100px;
-        width: 100%;
         grid-area: content;
-        overflow: hidden;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
 
-        section{
-            text-align: left;
-            font-family: "Jost",sans-serif;
-            margin: 0 0 2rem;
-            font-size: clamp(20px,2vw,22px);
-            font-weight: 350;
-            line-height: 135%;
+
+        #main-title{
+            background-color: #111111;
+            width: 100%;
+            height: 200px;
+            padding-top: 80px;
+            h1{
+                color: #fff;
+                text-shadow: 0 0 10px #fff8;
+            }
+        }
+
+        #main-body{
+            background: linear-gradient(to bottom, #111 0, var(--main-bgcolor) 50px 50px);
+            color: #aaa;
+            font-size: 20px;
+            padding: 70px 15px;
+            width: 100%;
+
+            section{
+                text-align: left;
+                font-family: "Jost",sans-serif;
+                margin: 0 0 2rem;
+                font-size: clamp(20px,2vw,22px);
+                font-weight: 350;
+                line-height: 135%;
+            }
         }
     }
+
+    #main-content::-webkit-scrollbar {
+        width: 0px;
+    }
+
+    #main-content::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+
 }
 
 
@@ -136,6 +159,14 @@ aside{
     :root{
         --sidebar-width: 425px;
         --main-width: calc(100% - var(--sidebar-width));
+    }
+
+    #main {
+        #main-content {
+            #main-body {
+                padding: 100px;
+            }
+        }
     }
 
     aside{
