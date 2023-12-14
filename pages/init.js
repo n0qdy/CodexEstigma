@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
-    let jquery = './js/jquery-3.7.1.min.js';
-    let core = './js/core.js';
-
+    let path = document.getElementsByTagName('section')[0].getAttribute('data-path');
+    let jquery = path + '/js/jquery-3.7.1.min.js';
+    let core = path + '/js/core.js';
     let scriptJquery = document.createElement('script');
+
     scriptJquery.onload = function() {
         console.log('cargado jquery');
         loadCore(core);

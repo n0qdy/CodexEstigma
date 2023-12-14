@@ -1,5 +1,6 @@
 :root{
     --sidebar-width: 100vw;
+    --sidebar-width2: 100vw;
     --sidebar-menu: 48px;
     --sidebar-content: calc(var(--sidebar-width) - var(--sidebar-menu));
     --main-width: 100vw;
@@ -64,13 +65,18 @@ aside{
         svg{
             fill: #999;
             cursor: pointer;
+        }
+
+        svg:hover{
+            fill: #fff;
+        }
+
+        #sidebar-toggle{
             width: 36px;
             height: 36px;
             margin-top: 8px;
         }
-        svg:hover{
-            fill: #fff;
-        }
+
     }
 
     #sidebar-content{
@@ -180,6 +186,7 @@ aside{
 @media (min-width: 768px) {
     :root{
         --sidebar-width: 425px;
+        --sidebar-width2: 425px;
         --main-width: calc(100% - var(--sidebar-width));
     }
 
