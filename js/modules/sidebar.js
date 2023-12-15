@@ -1,3 +1,9 @@
+function closeSidebar() {
+    $('#sidebar-close').on('click',function(ev) {
+        $('aside').toggleClass('show');
+        ev.preventDefault();
+    });
+}
 
 function toggleSidebar() {
     let sidebarToggle = $('#sidebar-toggle');
@@ -19,5 +25,6 @@ function toggleSidebar() {
 
 
 export function bindSidebar() {
+    closeSidebar();
     toggleSidebar();
 }

@@ -1,15 +1,16 @@
 export function loadTemplate () {
     return new Promise((resolve, reject) => {
+        let timestamp = (environment === 'production') ? new Date().getTime() : '';
         let section = $('section');
         let path = section.attr('data-path');
         let body = $('body');
         let head = $("head");
-        let urlHeader   = path + '/template/header.html?';
-        let urlMain   = path + '/template/main.html?';
-        let urlMetas   = path + '/template/metas.html?';
-        let urlSidebar   = path + '/template/sidebar.html?';
+        let urlHeader   = path + '/template/header.html?_=' + timestamp;
+        let urlMain   = path + '/template/main.html?_=' + timestamp;
+        let urlMetas   = path + '/template/metas.html?_=' + timestamp;
+        let urlSidebar   = path + '/template/sidebar.html?_=' + timestamp;
 
-        $('head').append('<link rel="stylesheet" href="' + path + '/css/main.css">');
+        $('head').append('<link rel="stylesheet" href="' + path + '/css/main.css?_=' + timestamp +'">');
 
         body.addClass('sidebar-open');
 
