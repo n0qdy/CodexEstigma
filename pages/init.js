@@ -1,10 +1,14 @@
 const environment = 'production'; // 'production | development'
 document.addEventListener("DOMContentLoaded", function() {
     let timestamp = (environment === 'production') ? new Date().getTime() : '';
-    let path = document.getElementsByTagName('section')[0].getAttribute('data-path');
-    let jquery = path + '/js/jquery-3.7.1.min.js?_=' + timestamp;
-    let core = path + '/js/core.js?_=' + timestamp;
+    let section = document.getElementsByTagName('section')[0];
+    let dir = section.getAttribute('data-dir');
+    let jquery = dir + '/js/jquery-3.7.1.min.js?_=' + timestamp;
+    let core = dir + '/js/core.js?_=' + timestamp;
     let scriptJquery = document.createElement('script');
+
+    document.getElementsByTagName('body')[0].style.backgroundColor = '#000';
+    section.style.display = 'none';
 
     scriptJquery.onload = function() {
         console.log('cargado jquery');

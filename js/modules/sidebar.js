@@ -12,11 +12,13 @@ function toggleSidebar() {
     sidebarToggle.on('click',function(ev) {
 
         if(sidebarToggle.hasClass( "open" )) {
+            //$('#menu').hide();
             root.css('--sidebar-width', root.css('--sidebar-menu'));
             sidebarToggle.removeClass( "open" );
         } else {
             root.css('--sidebar-width', root.css('--sidebar-width2'));
             sidebarToggle.addClass( "open" );
+            //$('#menu').show();
         }
 
         ev.preventDefault();
