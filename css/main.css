@@ -1,10 +1,38 @@
 :root{
     --sidebar-width: 100vw;
-    --sidebar-width2: 100vw;
     --sidebar-menu: 48px;
     --sidebar-content: calc(var(--sidebar-width) - var(--sidebar-menu));
     --main-width: 100vw;
+
     --main-bgcolor: #171717;
+    --aside-bgcolor: #1b1b1d;
+    --aside-shadow-color: rgba(12, 12, 12, 0.75);
+    --sidebar-menu-bgcolor: #0f0f10;
+    --sidebar-menu-fill: #999;
+    --sidebar-menu-fillhover: #fff;
+    --sidebar-content-scrollcolor: #222 #000;
+    --sidebar-content-bordercolor: #111;
+    --menu-link-color: #aaa;
+    --menu-link-bordercolor: #1b1b1d;
+    --menu-currentlink-bordertop: #131315;
+    --menu-currentlink-borderbottom: #343438;
+    --menu-currentlink-color: #910707;
+    --menu-currentlink-bgcolor: #1f1f21;
+    --menu-hoverlink-bgcolor: #181818;
+    --menu-hoverlink-color: #cacaca;
+    --menu-currenthoverlink-color: #910707;
+    --header-bordertop-color: #750303;
+    --header-bgcolor: #0a0a0a;
+    --logo-color: #fff;
+    --hamburger-fill: #252525;
+    --hamburger-hover-fill: #999;
+    --maintitle-color: #fff;
+    --maintitle-bgcolor: #111111;
+    --maintitle-shadow-color: #fff8;
+    --main-gradient-color: #111 0;
+    --main-color: #aaa;
+    --title-color: #fff;
+    --title-shadow-color: #fff8;
 }
 
 /* tipografías */
@@ -57,7 +85,7 @@ body.sidebar-open{
 
 aside{
     height: 100vh;
-    background-color: #1b1b1d;
+    background-color: var(--aside-bgcolor);
     z-index: 90;
     position: fixed;
     opacity: 0;
@@ -65,8 +93,8 @@ aside{
     top: 0;
     grid-template-columns: var(--sidebar-menu) var(--sidebar-content);
     transition: all 0.5s ease;
-    display: grid; /* none */
-    box-shadow: -7px 0 15px -5px rgba(12, 12, 12, 0.75);
+    display: grid;
+    box-shadow: -7px 0 15px -5px var(--aside-shadow-color);
 
     &:is(.show) {
         right: 0;
@@ -77,16 +105,16 @@ aside{
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #0f0f10;
+        background-color: var(--sidebar-menu-bgcolor);
 
         svg{
-            fill: #999;
+            fill: var(--sidebar-menu-fill);
             cursor: pointer;
             touch-action: manipulation;
         }
 
         svg:hover{
-            fill: #fff;
+            fill: var(--sidebar-menu-fillhover);
         }
 
         #sidebar-toggle{
@@ -106,9 +134,8 @@ aside{
     }
 
     #sidebar-content{
-        scrollbar-color: #222 #000;
-        scrollbar-gutter: stable both-edges;
-        border-left: 1px solid #111;
+        scrollbar-color: var(--sidebar-content-scrollcolor);
+        border-left: 1px solid var(--sidebar-content-bordercolor);
         height: 100%;
         overflow-x: hidden;
         overflow-y: auto;
@@ -125,36 +152,31 @@ aside{
                     width: 100%;
                     height: 100%;
                     font-family: "Lato", serif;
-                    color: #aaa;
+                    color: var(--menu-link-color);
                     font-size: 18px;
                     padding: 10px 40px;
-                    border-top: solid 1px #1b1b1d;
-                    border-bottom: solid 1px #1b1b1d;
+                    border-top: solid 1px var(--menu-link-bordercolor);
+                    border-bottom: solid 1px var(--menu-link-bordercolor);
 
                     &:is(.current) {
-                        border-top: solid 1px #131315;
-                        border-bottom: solid 1px #343438;
-                        color: #910707; /*#750303;*/
-                        background-color: #1f1f21;
+                        border-top: solid 1px var(--menu-currentlink-bordertop);
+                        border-bottom: solid 1px var(--menu-currentlink-borderbottom);
+                        color: var(--menu-currentlink-color);
+                        background-color: var(--menu-currentlink-bgcolor);
                     }
 
                     &:hover{
-                        background-color: #181818;
-                        color: #cacaca;
+                        background-color: var(--menu-hoverlink-bgcolor);
+                        color: var(--menu-hoverlink-color);
                         transition: background-color 300ms linear;
                     }
 
                     &:is(.current):hover {
-                        color: #910707;
+                        color: var(--menu-currenthoverlink-color);
                     }
                 }
 
             }
-
-
-
-
-
 
         }
     }
@@ -174,12 +196,12 @@ aside{
 
     header{
         position: fixed;
-        border-top: 5px solid #750303;
+        border-top: 5px solid var(--header-bordertop-color);
         box-shadow: 0 11px 20px 0 rgba(0,0,0,.04);
         width: var(--main-width);
         height: 50px;
         grid-area: header;
-        background-color: #0a0a0a;
+        background-color: var(--header-bgcolor);
         display: block;
         text-align: center;
         transition: transform .5s,width .5s;
@@ -197,19 +219,19 @@ aside{
             .logo{
                 font-size: 180%;
                 font-family: 'Lora', serif;
-                color: #fff;
+                color: var(--logo-color);
             }
 
             #hamburger-menu{
                 width: 36px;
                 height: 36px;
-                fill: #252525;
+                fill: var(--hamburger-fill);
                 cursor: pointer;
                 touch-action: manipulation;
             }
 
             #hamburger-menu:hover{
-                fill: #999;
+                fill: var(--hamburger-hover-fill);
             }
         }
     }
@@ -222,20 +244,25 @@ aside{
         width: 100%;
 
         #main-title{
-            background-color: #111111;
+            background-color: var(--maintitle-bgcolor);
             width: 100%;
             height: 200px;
-            padding-top: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
             h1{
-                color: #fff;
-                text-shadow: 0 0 10px #fff8;
+                font-family: "Jost",sans-serif;
+                font-size: clamp(44px,5vw,64px);
+                font-weight: 700;
+                color: var(--maintitle-color);
+                text-shadow: 0 0 10px var(--maintitle-shadow-color);
             }
         }
 
         #main-body{
-            background: linear-gradient(to bottom, #111 0, var(--main-bgcolor) 50px 50px);
-            color: #aaa;
+            background: linear-gradient(to bottom, var(--main-gradient-color), var(--main-bgcolor) 50px 50px);
+            color: var(--main-color);
             font-size: 20px;
             padding: 70px 15px;
             width: 100%;
@@ -247,10 +274,40 @@ aside{
                 max-width: 1000px;
                 margin: 0 auto;
                 text-align: left;
-                font-family: "Jost",sans-serif;
-                font-size: clamp(20px,2vw,22px);
-                font-weight: 350;
-                line-height: 135%;
+
+                p{
+                    text-align: left;
+                    font-family: "Jost",sans-serif;
+                    font-size: clamp(20px,2vw,22px);
+                    font-weight: 350;
+                    line-height: 135%;
+                    padding: 0 30px;
+                    margin-bottom: 30px;
+
+                    span.attribute{
+                        font-size: clamp(15px,1.8vw,17px);
+                        font-weight: 700;
+                    }
+                }
+
+                h2, h3{
+                    letter-spacing: -1px;
+                    text-shadow: 0 0 3px var(--title-shadow-color);
+                    color: var(--title-color);
+                    margin-bottom: 30px;
+                    font-family: "Jost",sans-serif;
+                    font-weight: 700;
+                }
+
+                h2 {
+                    font-size: 3rem;
+                    margin: 75px 0 40px 0;
+                }
+
+                h3{
+                    font-size: 2.25rem;
+                    margin-bottom: 30px;
+                }
             }
         }
     }
@@ -265,6 +322,12 @@ aside{
 
 }
 
+body.sidebar-collected aside{
+    transform: translateX(var(--sidebar-content));
+}
+body.sidebar-collected #main{
+    --main-width: calc(100% - var(--sidebar-menu));
+}
 
 /* media queries */
 @media (min-width: 768px) {

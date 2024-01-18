@@ -6,21 +6,8 @@ function closeSidebar() {
 }
 
 function toggleSidebar() {
-    let sidebarToggle = $('#sidebar-toggle');
-    let root = $(':root');
-
-    sidebarToggle.on('click',function(ev) {
-
-        if(sidebarToggle.hasClass( "open" )) {
-            //$('#menu').hide();
-            root.css('--sidebar-width', root.css('--sidebar-menu'));
-            sidebarToggle.removeClass( "open" );
-        } else {
-            root.css('--sidebar-width', root.css('--sidebar-width2'));
-            sidebarToggle.addClass( "open" );
-            //$('#menu').show();
-        }
-
+    $('#sidebar-toggle').on('click',function(ev) {
+        $('body').toggleClass('sidebar-collected');
         ev.preventDefault();
     });
 }

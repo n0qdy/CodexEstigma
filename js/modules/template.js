@@ -11,9 +11,7 @@ export function loadTemplate () {
         let urlMetas   = dir + '/template/metas.html?_=' + timestamp;
         let urlSidebar   = dir + '/template/sidebar.html?_=' + timestamp;
 
-
         $('head').append('<link rel="stylesheet" href="' + dir + '/css/main.css?_=' + timestamp +'">');
-
         body.addClass('sidebar-open');
 
         $.get(urlMetas, {} )

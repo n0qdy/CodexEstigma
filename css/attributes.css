@@ -1,0 +1,56 @@
+#table-attributes{
+    font-size: 1.2em;
+
+    td {
+        padding: 10px 15px;
+    }
+
+    thead td{
+        text-align: center;
+    }
+
+    .fis{
+        color: #fff;
+        background-color: #ea9999;
+    }
+
+    .men{
+        color: #fff;
+        background-color: #9fc5e8;
+    }
+
+    .soc{
+        color: #fff;
+        background-color: #b6d7a8;
+    }
+
+    .mis{
+        color: #fff;
+        background-color: #d5a6bd;
+    }
+
+    thead .fis{
+        background-color: #e06666;
+        border-radius: 20px 0px 0px 0px;
+    }
+
+    thead .men{
+        background-color: #6fa8dc;
+    }
+
+    thead .soc{
+        background-color: #93c47d;
+    }
+
+    thead .mis{
+        color: #fff;
+        background-color: #c27ba0;
+        border-radius: 0px 20px 0px 0px;
+    }
+
+    tfoot td{
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+    }
+}
