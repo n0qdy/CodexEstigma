@@ -1,12 +1,5 @@
-.table-wrapper{
-    width: 100%;
-    overflow-x: scroll;
-}
-
-
 #table-attributes{
     font-size: 1.2em;
-    overflow-x:auto;
 
     td {
         padding: 10px 15px;

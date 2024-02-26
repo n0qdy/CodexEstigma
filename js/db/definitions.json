@@ -1,0 +1,12 @@
+{
+  "entrada1": {
+    "clave": "valor1"
+  },
+  "entrada2": {
+    "title": "título entrada 2",
+    "clave": "valor2"
+  },
+  "entrada3": {
+    "clave": "valor3"
+  }
+}
