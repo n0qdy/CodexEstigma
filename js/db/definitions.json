@@ -1,5 +1,6 @@
 {
   "entrada1": {
+    "title": "título entrada 1",
     "clave": "valor1"
   },
   "entrada2": {
@@ -7,6 +8,7 @@
     "clave": "valor2"
   },
   "entrada3": {
+    "title": "título entrada 3",
     "clave": "valor3"
   }
 }

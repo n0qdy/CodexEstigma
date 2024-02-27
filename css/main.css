@@ -312,15 +312,15 @@ aside{
                 }
 
                 .table-wrapper{
-                    width: 100%;
+                    width: calc(100% - 30px);
+                    padding: 0 30px;
                     overflow-x: scroll;
                 }
 
-                .tooltip{
+                t{
                     display: inline;
                     position: relative;
                     overflow: visible;
-                    font-weight: bold;
                     text-decoration: underline;
                     cursor: pointer;
                     user-select: none;

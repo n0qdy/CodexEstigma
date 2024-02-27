@@ -18,9 +18,9 @@ export function tooltips() {
     let url = dir + '/js/db/definitions.json?_=' + timestamp;
 
     loadDefinitions(url, function (definitions) {
-        $('.tooltip').each(function () {
-            let entry = $(this).attr('data-definition');
-            $(this).append('<span class="tooltip-window hide">'+ definitions[entry]['title'] +'</span>');
+        $('t').each(function () {
+            let id = $(this).attr('id');
+            $(this).append('<span class="tooltip-window hide">'+ definitions[id]['title'] +'</span>');
             bindTooltip($(this));
         });
     });

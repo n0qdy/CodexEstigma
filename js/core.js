@@ -12,6 +12,9 @@ $(document).ready(function() {
         bindSidebar();
         tooltips();
         console.log(screen.width);
+
+
+
     }).catch((error) => {
         console.error(error);
     });
