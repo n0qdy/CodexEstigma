@@ -311,10 +311,17 @@ aside{
                     margin-bottom: 30px;
                 }
 
+
                 .table-wrapper{
                     width: calc(100% - 30px);
                     padding: 0 30px;
                     overflow-x: scroll;
+                }
+
+                .table{
+                    border-collapse: collapse;
+                    box-shadow: 5px 4px 30px 4px rgba(20,20,20,0.4);
+                    margin-bottom: 10px;
                 }
 
                 t{
