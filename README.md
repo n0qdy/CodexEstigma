@@ -1,2 +1,2 @@
 # CodexEstigma
- Manual del juego de rol Codex Estigma
+ Manual del juego de rol Codex Estigma.
