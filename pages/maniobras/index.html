@@ -26,8 +26,12 @@
     <h2>Mejorar maniobras</h2>
     <p>
         Cada maniobra tiene una lista de diez mejoras disponibles, pero solo se pueden adquirir un máximo de cinco de estas mejoras. El coste en puntos de experiencia para adquirir una mejora es igual al número de mejoras que tendría esa maniobra
-        multiplicado por 4. Por ejemplo, si adquieres la segunda mejora de una maniobra, el costo sería de 8 puntos de experiencia (2 mejoras multiplicado por 4).
+        multiplicado por 4.
     </p>
+    <q>
+        Por ejemplo, si un jugador adquiere la primera mejora de una maniobra, el costo sería de 4 puntos de experiencia (1 mejora multiplicado por 4), si adquiere la segunda mejora esta le costaría 8 puntos de experiencia (2 mejoras multiplicado por 4).
+        En total habría gastado 12 puntos de experiencia.
+    </q>
     <h2>Maestrías de combate</h2>
     <p>
         Las maniobras se agrupan en conjuntos más amplios definidos por su estilo de combate. Estos estilos se denominan Maestrías de combate. Igual que con las maniobras, algunas Maestrías también pueden tener requisitos.
@@ -38,14 +42,68 @@
         Para calcular el Grado que tiene un personaje en una Maestría de combate concreta, solo es necesario sumar los puntos de experiencia gastados en adquirir o mejorar maniobras de esa Maestría de combate.
         La siguiente tabla indica los puntos de experiencia necesarios para alcanzar cada Grado.
    </p>
-    <table id="table-mastery-grades" class="table">
-        <thead>
+    <div class="table-wrapper">
+        <table id="table-mastery-grades" class="table">
+            <thead>
+                <tr>
+                    <th>Grado</th>
+                    <th>Nombre</th>
+                    <th>PE</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Familiarizado</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Aprendiz</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Versado</td>
+                    <td>200</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Experto</td>
+                    <td>400</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>Maestro</td>
+                    <td>800</td>
+                </tr>
+            </tbody>
+            <tfoot>
             <tr>
-                <th>Grado</th>
-                <th>PE necesarios</th>
+                <td colspan="3"><span>Tabla 2.</span> Grados de Maestría.</td>
             </tr>
-        </thead>
-    </table>
+            </tfoot>
+        </table>
+        <q class="right">
+            Por ejemplo, si un jugador adquiere tres maniobras de la Maestría de Filo Largo, le costaría 30 PE (3 x 10). Luego, si adquiere cuatro mejoras para una de esas maniobras, le costaría 40 PE adicionales (4 + 8 + 12 + 16).
+            En total, habría gastado 70 PE, lo que resultaría en un Grado 1 en la Maestría de Filo Largo.
+        </q>
+    </div>
+    <p>
+        Cuando se realiza un Tiro Base con una maniobra, a su resultado se le suma el Grado de la Maestría a la que pertenece esa maniobra.
+    </p>
+    <q>
+        Continuando con el ejemplo anterior, si ese jugador usara una maniobra de la Maestría de Filo Largo, sumaría su Grado, un +1, al resultado de la tirada.
+    </q>
+    <p>
+        Cada vez que un jugador sube su Grado con un Maestría obtiene a su elección una de las mejoras disponibles de esa Maestría.
+    </p>
+    <h3>Mejoras de maestría</h3>
+    <p>
+        Cada Maestría de combate dispone, como mínimo, de diez mejoras 
+    </p>
+
+
     <p>
         Lore ipsum dolor sit amet Sed quam nibh viverra vel tincidunt
         <t id="entrada2">prueba tooltip texto largo</t>

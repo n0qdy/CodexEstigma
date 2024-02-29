@@ -35,6 +35,17 @@
     --title-shadow-color: #fff8;
 }
 
+@keyframes neon {
+    0% { color: #fff; text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00de, 0 0 30px #ff00de, 0 0 40px #ff00de, 0 0 55px #ff00de, 0 0 75px #ff00de; }
+    100% { color: #fff; text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff00de, 0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de, 0 0 150px #ff00de; }
+}
+
+@keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
+}
+
 /* tipografías */
 @font-face {
     font-family: 'Jost';
@@ -165,6 +176,7 @@ aside{
                         border-bottom: solid 1px var(--menu-currentlink-borderbottom);
                         color: var(--menu-currentlink-color);
                         background-color: var(--menu-currentlink-bgcolor);
+                        font-weight: bold;
                     }
 
                     &:hover{
@@ -299,6 +311,7 @@ aside{
                     margin-bottom: 30px;
                     font-family: "Jost",sans-serif;
                     font-weight: 700;
+                    clear: both;
                 }
 
                 h2 {
@@ -311,6 +324,25 @@ aside{
                     margin-bottom: 30px;
                 }
 
+                q{
+                    display: block;
+                    margin-bottom: 30px;
+                    padding: 10px 30px 15px 30px;
+                    border-left: solid 2px /*#c0c0c0*/ rgb(145, 7, 7);
+                    box-shadow: 7px 7px 12px 1px rgba(10,10,10,0.6);
+                    color: #000;
+                    font-size: clamp(18px, 2vw, 20px);
+                    font-weight: 350;
+                    line-height: 155%;
+                    font-family: 'Lora', serif;
+                    font-style: italic;
+                    background: linear-gradient(top, #fff 0px, var(--main-color) 100%);
+                    background: -webkit-linear-gradient(top, #fff 0px, var(--main-color) 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    &:before { content: ''; }
+                    &:after { content: ''; }
+                }
 
                 .table-wrapper{
                     width: calc(100% - 30px);
@@ -318,10 +350,83 @@ aside{
                     overflow-x: scroll;
                 }
 
-                .table{
+                table{
                     border-collapse: collapse;
-                    box-shadow: 5px 4px 30px 4px rgba(20,20,20,0.4);
-                    margin-bottom: 10px;
+                    box-shadow: 7px 7px 12px 2px rgba(10,10,10,0.6);
+                    margin-bottom: 30px;
+                    display: inline-block;
+
+                    td, th {
+                        padding: 10px 15px;
+                        border-right: solid 1px var(--sidebar-menu-bgcolor);
+                    }
+
+                    thead{
+                        th{
+                            background-color: var(--sidebar-menu-bgcolor);
+                            color: #dddde9;
+                            text-align: center;
+                            font-family: 'Lora', serif;
+                            text-transform: uppercase;
+                            font-size: 0.9em;
+                        }
+                    }
+
+                    tbody{
+                        tr{
+                            &:nth-child(odd){
+                                background-color: #798187;
+                            }
+
+                            &:nth-child(even) {
+                                background-color: #656d76;
+                            }
+
+                            td{
+                                color: #000;
+                                font-family: "Jost",sans-serif;
+                                font-size: clamp(20px,2vw,22px);
+                                font-weight: 350;
+                            }
+                        }
+                    }
+
+                    tfoot{
+                        tr{
+                            td{
+                                border: solid 1px var(--sidebar-menu-bgcolor);
+                                background-color: #1b1b1d;
+                                color: #c0c0c0;
+                                text-align: center;
+                                font-size: 0.8em;
+                                font-family: "Jost",sans-serif;
+
+                                span{
+                                    font-family: 'Lora', serif;
+                                }
+                            }
+                        }
+                    }
+
+                    &:is(.table-cross) {
+                        thead{
+                            th:first-of-type{
+                                background-color: transparent;
+                            }
+                        }
+
+                        tbody{
+                            tr{
+                                td:first-of-type{
+                                    background-color: var(--sidebar-menu-bgcolor);
+                                    color: #dddde9;
+                                    font-family: 'Lora', serif;
+                                    text-transform: uppercase;
+                                    font-size: 0.9em;
+                                }
+                            }
+                        }
+                    }
                 }
 
                 t{
@@ -390,6 +495,25 @@ body.sidebar-collected #main{
                 padding: 100px;
 
                 section {
+                    q{
+                        &:is(.left){
+                            float: left;
+                            max-width: 480px;
+                            margin-right: 20px;
+                        }
+
+                        &:is(.right){
+                            float: right;
+                            max-width: 480px;
+                            margin-left: 20px;
+                            /*
+                            border-left: none;
+                            border-right: solid 2px #c0c0c0;
+                            box-shadow: -7px 7px 12px 1px rgba(10,10,10,0.6);
+                            */
+                        }
+                    }
+
                     .tooltip-window{
                         left: calc(50% + -142px);
                     }
